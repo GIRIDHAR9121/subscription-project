@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Expenditures</title>
+        {% include 'cdnlines.html' %}
+    </head>
+    <style>
+        body{
+            background: linear-gradient(to right,gray,wheat);
+        }
+        table{
+            box-shadow: 10px 5px gray;
+        }
+        form{
+            border: 2px solid gray;
+            padding: 10px;
+            box-shadow: 10px 5px pink;
+        }
+        .form-control{
+            background-color:wheat;
+        }
+    </style>
+    <body>
+        {% include 'navbar.html' %}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="text-center display-5 mt-2">Enter The Expenditures Here!!</h2><br>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="text" placeholder="Enter Expenditure Type:" class="form-control" name="exp_name">
+                        <input type="number" placeholder="Enter Expenditure Incurred:" class="form-control mt-2" name="exp_incurred">
+                        <div class="text-center mt-2">
+                            <input type="submit" value="Submit" class="btn btn-success">
+                            <input type="reset" value="Cancel" class="btn btn-danger">
+                        </div>
+                    </form>
+                </div>
+                    <div class="col-md-8">
+                        {% if exp %}
+                        <h2 class="text-center mt-2">See Expenditures Details</h2>
+                        <table class="table table-bordered text-center mt-3">
+                            <tr>
+                                <th>Expenditure Type</th>
+                                <th>Expenditure Incurred</th>
+                                <th>Actions</th>
+                            </tr>
+                            {% for i in exp %}
+                            <tr>
+                                <td>{{ i.exp_name }}</td>
+                                <td>{{ i.exp_incurred }}</td>
+                                <td>
+                                    <a href="{% url 'update_exp' i.id %}" class="btn btn-outline-info btn-md">Update</a>
+                                    <a href="{% url 'delete_exp' i.id %}" class="btn btn-outline-danger btn-md">Delete</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                        {% else %}
+                            <h2 class="text-center mt-2">No Expenditures Occured </h2>
+                        {% endif %}
+                    </div>
+            </div>
+        </div>
+    </body>
+</html>

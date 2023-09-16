@@ -1,0 +1,38 @@
+
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <img src="{% static 'images/GaneshLord1.jpg' %}" alt="Logo" class="vinayaka"> &nbsp;&nbsp;&nbsp;
+    <a class="navbar-brand" href="{% url 'mainpage' %}">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'adddata' %}">Add Subscription</a>
+        </li>
+        <li class="nav-item active ">
+          <a class="nav-link" href="{% url 'see_sub' %}">See Subscription details</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'expenditure' %}">Expenditures</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'total_amount' %}">Total Amount</a>
+        </li>
+      </ul>
+    </div>
+    <a href="{% url 'help' %}"class="text-white text-decoration-none">Help</a>
+  </nav>
+  <style>
+    .navbar{
+      background: linear-gradient( to left,skyblue,maroon);
+    }
+    .vinayaka{
+      height: 40px;
+      width: 40px;
+      border: 2px solid slateblue;
+      border-radius: 30px;
+
+    }
+  </style>

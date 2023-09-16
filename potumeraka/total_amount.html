@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Total Amount</title>
+    {% include 'cdnlines.html' %}
+</head>
+<style>
+    body{
+        background: linear-gradient(to right,wheat,lightpink);
+    }
+</style>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="offset-md-4 col-md-4">
+                    <h1 class="text-center text-primary">Total Amount</h1>
+                    <h3 class="text-center text-primary">The Total Amount Is*: {{ total_amount }}</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

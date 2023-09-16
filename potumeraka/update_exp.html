@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Update Data</title>
+        {% include 'cdnlines.html' %}
+    </head>
+    <style>
+        form{
+            box-shadow: 0px 0px 10px red,0px 0px 7px blue;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .form-control{
+            margin-top: 10px;
+        }
+        body{
+            background: pink;
+        }
+    </style>
+    <body>
+        {% include 'navbar.html' %}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="offset-md-4 col-md-4">
+                    <h3 class="text-center">Update The Details Here!! </h3>
+                    <form method="post" action="{% url 'updated_exp' exp.id %}">
+                        {% csrf_token %}
+                        <input type="text" placeholder="Enter Expenditure Type:" class="form-control" name="exp_name" value="{{ exp.exp_name }}">
+                        <input type="number" placeholder="Enter Expenditure Incurred:" class="form-control mt-2" name="exp_incurred" value="{{ exp.exp_incurred }}">
+                        <div class="text-center">
+                            <input type="submit" value="Update" class="btn btn-outline-success mt-3">
+                            <input type="reset" value="Clear" class="btn btn-outline-danger mt-3">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>    
+    </body>
+</html>

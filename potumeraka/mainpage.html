@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MainPage</title>
+        {% include 'cdnlines.html' %}
+    </head>
+    <style>
+        h1{
+            border: 2px solid green;
+            border-radius: 10px;
+            background:linear-gradient(to right,lightpink,lightgray);
+            box-shadow: 0px 0px 10px blue,0px 0px 7px yellow;
+            margin-top: 20px;
+            text-shadow: 5px 1px white;
+        }
+        body{
+            background: linear-gradient(to right,lightpink,lightgray);
+        }
+        .btn{
+            transition: 2s;
+        }
+        .vinayaka{
+            height: 40px;
+            width: 40px;
+            border: 2px solid slateblue;
+            border-radius: 30px;
+            margin-bottom: 4px;
+            
+        }
+        h2{
+            text-shadow: 2px 2px red;
+        }
+        .img{
+            height: 350px;
+            width: 350px;
+            border-radius: 150px;
+        }
+    </style>
+    <body>
+        {% include 'navbar.html' %}
+        <div class="container-fluid">
+            <h1 class="text-center"><img src="{% static 'images/GaneshLord1.jpg' %}" alt="Logo" class="vinayaka">
+                Welcome To  Ganesh Chathurthi Celebrations <img src="{% static 'images/GaneshLord1.jpg' %}" alt="Logo" class="vinayaka"></h1>
+            <div class="row">
+                <div class="col-md-12 ">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="text-left">
+                                    <a href="{% url 'see_sub' %}" class="btn btn-outline-primary mt-3 btn-lg">See Subscription Details</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h2 class="text-center ">Conducted By PothuRaju Youth</h2>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-right">
+                                    <a href="{% url 'adddata' %}" class="btn btn-outline-success mt-3 btn-lg">Add Subscription</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="offset-md-3 col-md-4">
+                                <img src="{% static 'images/GaneshLord1.jpg' %}" class="mt-3">
+                            </div>
+                        </div>
+                </div>
+            </div>
+        <div>
+    </body>
+</html>

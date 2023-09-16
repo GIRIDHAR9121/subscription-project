@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Subscription Data</title>
+        {% include 'cdnlines.html' %}
+    </head>
+    <style>
+        form{
+            box-shadow: 0px 0px 10px red,0px 0px 7px blue;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .form-control{
+            margin-top: 10px;
+            background: wheat;
+        }
+        body{
+            background:linear-gradient(to right,lightblue,lightgray);
+        }
+    </style>
+    <body>
+        {% include 'navbar.html' %}
+        <div class="container-fluid">
+            <h1 class="text-center mt-4">Enter The Details Here!! </h1>
+            <div class="row">
+                <div class="offset-md-4 col-md-4">
+                    <form method="post" >
+                        {% csrf_token %}
+                        <input type="text" class="form-control" placeholder="Enter Name:" name="name">
+                        <input type="text" class="form-control" placeholder="Enter Sur Name:" name="sur_name">
+                        <input type="text" class="form-control" placeholder="Enter Father Name:" name="father_name">
+                        <input type="number" class="form-control" placeholder="Enter Amount:" name="amount">
+                        <input type="text" class="form-control" placeholder="Enter Payment Type:" name="payment_type">
+                        <input type="date" class="form-control" placeholder="Enter Date:" name="date">
+                        <input type="text" class="form-control" placeholder="Payment Recieved By:" name="recieved_by">
+                        <div class="text-center">
+                            <input type="submit" value="Add" class="btn btn-outline-success mt-3">
+                            <input type="reset" value="Clear" class="btn btn-outline-danger mt-3">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>    
+    </body>
+</html>
